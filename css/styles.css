@@ -590,35 +590,138 @@ body {
 }
 
 /* ============================================
-   RESPONSIVE - MOBILE & TABLET
+   RESPONSIVE DESIGN - MOBILE FIRST
    ============================================ */
 
-/* Tablets y pantallas medianas */
-@media (max-width: 1024px) {
+/* ============================================
+   LAPTOPS Y PC (Pantallas grandes > 1024px)
+   DISEÑO DE DASHBOARD - VISTA ÚNICA SIN SCROLL
+   ============================================ */
+@media (min-width: 1025px) {
+    .main-content {
+        height: 100vh;
+        overflow: hidden;
+        padding: 20px;
+    }
+    
+    .container {
+        max-width: 1400px;
+        padding: 20px;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 25px;
+        height: 100%;
+        max-height: 100vh;
+        overflow: hidden;
+    }
+    
+    .left-column {
+        height: 100%;
+    }
+    
+    .right-column {
+        height: 100%;
+        gap: 25px;
+    }
+    
+    .section-letter {
+        height: 100%;
+    }
+    
+    .carousel {
+        height: 500px;
+        flex-grow: 1;
+    }
+}
+
+/* ============================================
+   TABLETS HORIZONTAL (Landscape 768px - 1024px)
+   DISEÑO DE 2 COLUMNAS ADAPTADO
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .main-content {
         height: auto;
         min-height: 100vh;
         overflow: visible;
-        padding: 15px;
+        padding: 20px 15px;
     }
     
     .container {
-        grid-template-columns: 1fr;
-        gap: 18px;
-        max-width: 650px;
-        padding: 12px;
+        max-width: 900px;
+        padding: 15px;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
         height: auto;
-        min-height: auto;
-        align-items: start;
     }
     
     .section {
-        padding: 22px 18px;
+        padding: 20px 18px;
+    }
+    
+    .section-title {
+        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        margin-bottom: 15px;
+    }
+    
+    .love-letter {
+        font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+        padding: 18px 15px;
+    }
+    
+    .carousel {
+        height: 400px;
+    }
+    
+    .time-counter {
+        gap: 10px;
+    }
+    
+    .time-value {
+        font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+    }
+}
+
+/* ============================================
+   TABLETS VERTICAL (Portrait 768px - 1024px)
+   DISEÑO APILADO CON SCROLL
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .main-content {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+        padding: 25px 20px;
+    }
+    
+    .container {
+        max-width: 650px;
+        padding: 20px;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        height: auto;
+    }
+    
+    .section {
+        padding: 25px 20px;
+    }
+    
+    .section-title {
+        font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+        margin-bottom: 18px;
+    }
+    
+    .love-letter {
+        font-size: clamp(1rem, 2.8vw, 1.15rem);
+        line-height: 1.75;
+        padding: 25px 20px;
+    }
+    
+    .carousel {
+        height: 450px;
     }
     
     .left-column,
     .right-column {
-        gap: 18px;
+        gap: 25px;
         height: auto;
     }
     
@@ -626,94 +729,189 @@ body {
         height: auto;
     }
     
-    .carousel {
-        flex-grow: 0;
-        aspect-ratio: 1/1;
+    .time-counter {
+        gap: 12px;
     }
     
-    .carousel-inner {
-        flex: none;
+    .time-unit {
+        padding: 16px 12px;
     }
     
-    .carousel-item {
-        height: auto;
-        aspect-ratio: 1/1;
+    .time-value {
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
+    }
+    
+    .time-label {
+        font-size: clamp(0.75rem, 2vw, 0.85rem);
     }
 }
 
-/* Mobile */
-@media (max-width: 480px) {
+/* ============================================
+   MÓVILES (Pantallas pequeñas < 768px)
+   DISEÑO APILADO CON SCROLL NATURAL
+   ============================================ */
+@media (max-width: 767px) {
+    /* Eliminar restricción de altura - Permitir scroll */
     .main-content {
         height: auto;
         min-height: 100vh;
         overflow: visible;
-        padding: 10px;
+        padding: 15px 10px;
     }
     
+    /* Diseño apilado (columna única) */
     .container {
+        max-width: 100%;
+        padding: 12px;
         grid-template-columns: 1fr;
-        padding: 10px;
-        gap: 15px;
+        gap: 20px;
         height: auto;
-        min-height: auto;
-    }
-    
-    .section {
-        padding: 18px 15px;
-        border-radius: 20px;
+        overflow: visible;
     }
     
     .left-column,
     .right-column {
-        gap: 15px;
+        gap: 20px;
         height: auto;
     }
-
-    .time-counter {
-        gap: 8px;
+    
+    .section-letter {
+        height: auto;
     }
-
-    .time-unit {
-        padding: 12px 8px;
+    
+    /* Aumentar padding y tamaño de fuente para legibilidad */
+    .section {
+        padding: 25px 20px;
+        border-radius: 18px;
     }
-
-    .carousel-arrow {
-        width: 32px;
-        height: 32px;
+    
+    .section-title {
+        font-size: clamp(1.3rem, 5vw, 1.6rem);
+        margin-bottom: 18px;
+        padding-bottom: 20px;
+    }
+    
+    .section-title::after {
         font-size: 1.1rem;
     }
     
-    .carousel-arrow.prev {
-        left: 8px;
-    }
-    
-    .carousel-arrow.next {
-        right: 8px;
-    }
-    
-    .music-control {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 1.5rem;
-    }
-    
+    /* Carta más legible con el dedo */
     .love-letter {
-        padding: 20px 15px;
-        font-size: clamp(0.9rem, 3vw, 1rem);
+        font-size: clamp(1rem, 4vw, 1.15rem);
+        line-height: 1.8;
+        padding: 25px 20px;
+    }
+    
+    .love-letter p {
+        margin-bottom: 18px;
     }
     
     .signature {
-        font-size: clamp(1rem, 4vw, 1.2rem);
+        font-size: clamp(1.1rem, 4.5vw, 1.3rem);
+        margin-top: 20px;
+        padding-top: 18px;
+    }
+    
+    /* Contador más grande y espacioso */
+    .time-counter {
+        gap: 10px;
+        margin-top: 12px;
+    }
+    
+    .time-unit {
+        padding: 16px 10px;
+        border-radius: 12px;
+    }
+    
+    .time-value {
+        font-size: clamp(1.4rem, 6vw, 1.8rem);
+        margin-bottom: 6px;
+    }
+    
+    .time-label {
+        font-size: clamp(0.7rem, 3vw, 0.85rem);
+    }
+    
+    /* Carrusel optimizado para móvil */
+    .carousel {
+        height: 350px;
+        width: 100%;
+        margin-top: 12px;
+    }
+    
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+    
+    .carousel-arrow.prev {
+        left: 10px;
+    }
+    
+    .carousel-arrow.next {
+        right: 10px;
+    }
+    
+    .carousel-controls {
+        bottom: 15px;
+        right: 15px;
+        padding: 6px 10px;
+    }
+    
+    .carousel-dot {
+        width: 9px;
+        height: 9px;
+    }
+    
+    /* Control de música */
+    .music-control {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.6rem;
+    }
+}
+
+/* ============================================
+   MÓVILES MUY PEQUEÑOS (< 375px)
+   AJUSTES ADICIONALES
+   ============================================ */
+@media (max-width: 374px) {
+    .main-content {
+        padding: 12px 8px;
+    }
+    
+    .container {
+        padding: 8px;
+        gap: 15px;
+    }
+    
+    .section {
+        padding: 20px 15px;
+    }
+    
+    .love-letter {
+        font-size: clamp(0.95rem, 4vw, 1.05rem);
+        padding: 20px 15px;
+    }
+    
+    .time-counter {
+        gap: 6px;
+    }
+    
+    .time-unit {
+        padding: 12px 8px;
     }
     
     .carousel {
-        flex-grow: 0;
+        height: 300px;
     }
     
-    .carousel-item {
-        height: auto;
-        aspect-ratio: 1/1;
+    .carousel-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
     }
 }
