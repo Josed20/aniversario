@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tarjeta de aniversario digital interactiva">
+    <title>Para Ti, Mi Amor ❤️</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Reproductor de música de fondo -->
+    <audio id="backgroundMusic" loop>
+        <source src="music/Dstance - Niña Bonita (Versión Acústica).mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+    <!-- Control de música -->
+    <button class="music-control" id="musicControl" title="Pausar música">
+        🎵
+    </button>
+
+    <!-- Lluvia de corazones -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Pantalla de bienvenida -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <h1 class="welcome-title">Para Ti, Mi Amor</h1>
+        <p class="welcome-subtitle">Feliz Aniversario ❤️</p>
+        <button class="surprise-button" id="surpriseBtn">
+            Tengo una sorpresa para ti ✨
+        </button>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content" id="mainContent">
+        <div class="container">
+            <!-- Columna izquierda (Principal): Carta romántica -->
+            <div class="left-column">
+                <section class="section fade-in section-letter">
+                    <h2 class="section-title">Para Ti</h2>
+                    <div class="love-letter">
+                        <p>
+                            Mi pechocha hermosa, feliz aniversario.
+                        </p>
+                        <p>
+                            A pesar de los kilómetros, te siento más cerca que nunca porque vives en mi mente y en mi corazón. 
+                            Eres mi refugio y mi alegría diaria; pensar en ti es mi paz.
+                        </p>
+                        <p>
+                            Mi mayor deseo es verte feliz cada día, cuidarte (incluso de lejos) y construir un futuro donde la distancia sea solo un recuerdo.
+                        </p>
+                        <p>
+                            Gracias por ser mi compañera, mi equipo y mi fuerza. Vamos por todo, mi amor, siempre de la mano. ❤️
+                        </p>
+                    </div>
+                    <div class="signature">
+                        Con todo mi amor,<br>
+                        Tu novio que te ama mucho
+                    </div>
+                </section>
+            </div>
+
+            <!-- Columna derecha (Secundaria): Contador + Carrusel -->
+            <div class="right-column">
+                <!-- Sección 1: Contador de tiempo -->
+                <section class="section section-counter fade-in">
+                    <h2 class="section-title">Nuestro Tiempo Juntos</h2>
+                    <div class="time-counter" id="timeCounter">
+                        <div class="time-unit">
+                            <span class="time-value" id="years">0</span>
+                            <span class="time-label">Años</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="months">0</span>
+                            <span class="time-label">Meses</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="days">0</span>
+                            <span class="time-label">Días</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-value" id="hours">0</span>
+                            <span class="time-label">Horas</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 2: Carrusel de fotos -->
+                <section class="section section-carousel fade-in">
+                    <h2 class="section-title">Nuestros Momentos</h2>
+                    <div class="carousel">
+                        <div class="carousel-inner" id="carouselInner">
+                            <div class="carousel-item">
+                                <img src="img/foto1.jpeg" alt="Nuestro primer momento">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/foto2.jpeg" alt="Aventuras juntos">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/foto3.jpeg" alt="Sonrisas compartidas">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/foto4.jpeg" alt="Momentos especiales">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/foto5.jpeg" alt="Amor infinito">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/foto6.jpeg" alt="Juntos para siempre">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/foto7.jpeg" alt="Recuerdos hermosos">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/foto8.jpeg" alt="Nuestra historia">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/foto9.jpeg" alt="Te amo">
+                            </div>
+                        </div>
+                        <button class="carousel-arrow prev" id="prevBtn">‹</button>
+                        <button class="carousel-arrow next" id="nextBtn">›</button>
+                        <div class="carousel-controls" id="carouselDots"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
