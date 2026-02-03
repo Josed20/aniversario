@@ -595,12 +595,13 @@ body {
 
 /* ============================================
    LAPTOPS Y PC (Pantallas grandes > 1024px)
-   DISEÑO DE DASHBOARD - VISTA ÚNICA SIN SCROLL
+   DISEÑO DE 2 COLUMNAS CON SCROLL
    ============================================ */
 @media (min-width: 1025px) {
     .main-content {
-        height: 100vh;
-        overflow: hidden;
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
         padding: 20px;
     }
     
@@ -609,27 +610,24 @@ body {
         padding: 20px;
         grid-template-columns: 1.2fr 0.8fr;
         gap: 25px;
-        height: 100%;
-        max-height: 100vh;
-        overflow: hidden;
+        height: auto;
     }
     
     .left-column {
-        height: 100%;
+        height: auto;
     }
     
     .right-column {
-        height: 100%;
+        height: auto;
         gap: 25px;
     }
     
     .section-letter {
-        height: 100%;
+        height: auto;
     }
     
     .carousel {
         height: 500px;
-        flex-grow: 1;
     }
 }
 
